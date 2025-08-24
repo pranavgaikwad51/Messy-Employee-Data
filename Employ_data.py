@@ -40,7 +40,8 @@ upper_bond = salary_mean + (3 * salary_std)
 # Removing where salary is low or high
 
 df = df [(df['Salary'] >= lower_bond) & (df['Salary']<= upper_bond)]
+# Changed The Employee_name For Proper Undrstanding And saved By ascending Order
+df["Employee_Name"] = ["Employee_Name_" + str(i).zfill(2) for i in range(1, len(df) + 1)]
 
-df.to_csv('Cleaned employe data.csv', index = False)
-
+df.to_csv("Final_data.csv",index=False)
 print("Data cleaned succesfully , File Saved as Cleaned employe data.csv")
